@@ -1,2 +1,28 @@
 @import "tailwindcss";
 @plugin "daisyui";
+.marquee-container {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.brand-item {
+  margin: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marquee-container:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

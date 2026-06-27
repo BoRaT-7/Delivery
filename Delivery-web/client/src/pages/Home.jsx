@@ -1,5 +1,14 @@
 import Banner from "../components/Banner";
 import BookingIcon from "../assets/bookingIcon.png";
+import OurServices from "../components/OurServices";
+import Brands from "../components/Brands";
+import Features from "../components/Features";
+import MerchantSection from "../components/MerchantSection";
+import CustomerReview from "../components/CustomerReview";
+import FAQ from "../components/FAQ";
+import Footer from "./footer/Footer";
+
+
 
 export default function Home() {
 
@@ -116,12 +125,21 @@ export default function Home() {
                                 group-hover:w-full
                             "></div>
 
-                        </div>
+                        </div> 
                     ))}
 
                 </div>
 
             </section>
+
+           <OurServices></OurServices> 
+         <Brands></Brands>
+         <Features></Features>
+         <MerchantSection></MerchantSection>
+         <CustomerReview></CustomerReview>
+         <FAQ></FAQ>
+         <Footer></Footer>
+
 
         </div>
     );

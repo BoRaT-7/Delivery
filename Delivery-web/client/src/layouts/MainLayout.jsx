@@ -3,10 +3,12 @@ import Navbar from "../components/Navbar/Navbar";
 
 export default function MainLayout() {
     return (
-        <div className="max-w-7xl mx-auto">
+        <div>
             <Navbar />
 
-            <Outlet />
+            <main>
+                <Outlet />
+            </main>
         </div>
     );
 }

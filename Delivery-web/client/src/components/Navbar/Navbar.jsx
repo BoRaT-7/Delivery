@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { FiArrowUpRight } from "react-icons/fi";
+
 export default function Navbar() {
     const navLinks = (
         <>
@@ -56,16 +57,20 @@ export default function Navbar() {
                 </ul>
             </div>
 
-            <div className="navbar-end gap-3">
-                <button className="btn hover:bg-[#b8d95a] btn-outline">
-                    Sign In
-                </button>
+           <div className="navbar-end gap-3">
+    <Link to="/signin">
+        <button className="btn hover:bg-[#b8d95a] btn-outline">
+            Sign In
+        </button>
+    </Link>
 
-             <button className="btn bg-[#CAEB66] hover:bg-[#b8d95a] border-none rounded-md">
-    Sign Up
-    <FiArrowUpRight className="text-lg" />
-</button>
-            </div>
+    <Link to="/signup">
+        <button className="btn bg-[#CAEB66] hover:bg-[#b8d95a] border-none rounded-md">
+            Sign Up
+            <FiArrowUpRight className="text-lg" />
+        </button>
+    </Link>
+</div>
         </div>
     );
 }

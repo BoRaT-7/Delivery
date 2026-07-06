@@ -6,7 +6,7 @@ export default function Navbar() {
     const navLinks = (
         <>
             <li><Link to="/">Services</Link></li>
-            <li><Link to="/">Coverage</Link></li>
+            <li><Link to="/coverage">Coverage</Link></li>
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/">Pricing</Link></li>
             <li><Link to="/">Blog</Link></li>

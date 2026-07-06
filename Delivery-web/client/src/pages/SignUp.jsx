@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
-
+import authImage from"../assets/auth/authImage.png";
 export default function SignUp() {
     return (
         <div className="min-h-screen flex items-center justify-center bg-base-200">
+            <div>
+                      <img
+                    src={authImage}
+                    alt="Authentication"
+                    className="w-full max-w-md"
+                />
+            </div>
             <div className="card bg-base-100 w-full max-w-md shadow-xl">
                 <div className="card-body">
                     <h2 className="text-3xl font-bold text-center mb-5">

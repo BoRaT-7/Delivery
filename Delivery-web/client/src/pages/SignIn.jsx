@@ -28,16 +28,26 @@ export default function SignIn() {
                             />
                         </div>
 
-                        <div>
-                            <label className="label">
-                                <span className="label-text">Password</span>
-                            </label>
-                            <input
-                                type="password"
-                                placeholder="Enter password"
-                                className="input input-bordered w-full"
-                            />
-                        </div>
+                    <div>
+    <label className="label">
+        <span className="label-text">Password</span>
+    </label>
+
+    <input
+        type="password"
+        placeholder="Enter password"
+        className="input input-bordered w-full"
+    />
+
+    <div className="text-right mt-2">
+        <Link
+            to="/forgot-password"
+            className="text-sm text-blue-500 hover:underline"
+        >
+            Forgot Password?
+        </Link>
+    </div>
+</div>
 
                         <button className="btn bg-[#CAEB66] w-full border-none">
                             Sign In

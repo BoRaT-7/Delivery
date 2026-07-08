@@ -6,6 +6,7 @@ import About from "../pages/About";
 import SignUp from "../pages/SignUp";
 import SignIn from "../pages/SignIn";
 import Coverage from "../pages/coverage/Coverage";
+import ForgotPassword from "../pages/ForgotPassword";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
                 path: "signin",
                 element: <SignIn />,
             },
+            {
+    path: "forgot-password",
+    element: <ForgotPassword />,
+},
         ],
     },
 ]);

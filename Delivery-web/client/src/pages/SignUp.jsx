@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import authImage from "../assets/auth/authImage.png";
+import useAuth from "../hooks/useAuth";
 
 export default function SignUp() {
     const {
@@ -9,14 +10,22 @@ export default function SignUp() {
         formState: { errors },
         reset,
     } = useForm();
+    const navigate = useNavigate();
+const {registerUser}= useAuth();
 
-    const onSubmit = (data) => {
-        console.log(data);
+   const onSubmit = (data) => {
+  registerUser(data.email, data.password)
+    .then((result) => {
+      console.log(result.user);
 
-        // TODO: Firebase Create User Here
+      reset();
 
-        reset();
-    };
+      navigate("/");
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+};
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-base-200 px-5">

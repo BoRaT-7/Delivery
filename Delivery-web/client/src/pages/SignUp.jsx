@@ -1,31 +1,32 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import authImage from "../assets/auth/authImage.png";
 import useAuth from "../hooks/useAuth";
 
 export default function SignUp() {
+
+    const navigate = useNavigate();
+
     const {
         register,
         handleSubmit,
-        formState: { errors },
         reset,
+        formState: { errors },
     } = useForm();
-    const navigate = useNavigate();
-const {registerUser}= useAuth();
 
-   const onSubmit = (data) => {
-  registerUser(data.email, data.password)
-    .then((result) => {
-      console.log(result.user);
+    const { registerUser } = useAuth();
 
-      reset();
-
-      navigate("/");
-    })
-    .catch((error) => {
-      console.log(error.message);
-    });
-};
+    const onSubmit = (data) => {
+        registerUser(data.email, data.password)
+            .then((result) => {
+                console.log(result.user);
+                reset();
+                navigate("/");
+            })
+            .catch((error) => {
+                console.log(error.message);
+            });
+    };
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-base-200 px-5">

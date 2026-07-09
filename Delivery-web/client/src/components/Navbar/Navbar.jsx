@@ -96,11 +96,11 @@ export default function Navbar() {
                         </span>
 
                         <button
-                            onClick={handleLogout}
-                            className="btn btn-error text-white"
-                        >
-                            Logout
-                        </button>
+  onClick={handleLogout}
+  className="btn bg-[#b8d95a] hover:bg-[#a8c94f] text-black border-none"
+>
+  Logout
+</button>
                     </>
                 ) : (
                     <>
@@ -118,7 +118,6 @@ export default function Navbar() {
                         </Link>
                     </>
                 )}
-
             </div>
 
         </div>

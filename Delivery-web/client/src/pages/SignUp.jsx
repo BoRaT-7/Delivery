@@ -16,17 +16,33 @@ export default function SignUp() {
 
     const { registerUser, googleSignIn } = useAuth();
 
-    const onSubmit = (data) => {
-        registerUser(data.email, data.password)
-            .then((result) => {
-                console.log(result.user);
-                reset();
-                navigate("/");
-            })
-            .catch((error) => {
-                console.log(error.message);
-            });
-    };
+   const onSubmit = (data) => {
+    const image = data.image?.[0];
+
+    if (!image) {
+        console.log("No image selected");
+        return;
+    }
+
+    console.log("Selected Image:", image);
+    console.log("Name:", image.name);
+    console.log("Size:", image.size);
+    console.log("Type:", image.type);
+
+    registerUser(data.email, data.password)
+        .then((result) => {
+            console.log(result.user);
+
+            // Later upload image here
+            // console.log(image);
+
+            reset();
+            navigate("/");
+        })
+        .catch((error) => {
+            console.log(error.message);
+        });
+};
 
     const handleGoogleSignIn = () => {
         googleSignIn()
@@ -60,7 +76,31 @@ export default function SignUp() {
                     <form
                         onSubmit={handleSubmit(onSubmit)}
                         className="space-y-4"
+                         encType="multipart/form-data"
                     >
+                      {/* Profile Image */}
+<div>
+    <label className="label">
+        <span className="label-text">
+            Profile Image
+        </span>
+    </label>
+
+    <input
+        type="file"
+        accept="image/*"
+        className="file-input file-input-bordered w-full"
+        {...register("image", {
+            required: "Profile image is required",
+        })}
+    />
+
+    {errors.image && (
+        <p className="text-red-500 text-sm mt-1">
+            {errors.image.message}
+        </p>
+    )}
+</div>  
                         {/* Name */}
                         <div>
                             <label className="label">
